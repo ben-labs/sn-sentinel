@@ -1,6 +1,8 @@
+[![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
+---
 # sn-sentinel
 Monitoring and Alert for ServiceNow On-Premise Patches
-[![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
+
 ## Description
 Blah
 
