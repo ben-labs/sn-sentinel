@@ -6,7 +6,17 @@ class Ftp:
 
     def __init__(self) -> None:
         self.logged_in = False
-        self._patches = []
+
+    
+    @property
+    def patches(self):
+        return self._patches
+
+    
+    @patches.setter
+    def patches(self, props):
+        self._patches = props
+
 
     def connect(self, uid, pwd):
         try:
@@ -32,7 +42,7 @@ class Ftp:
             print("[ - ] Not logged in")
             return False
         
-        self._patches = self.svr.nlst(filter)
+        self.patches = self.svr.nlst(filter)
         return True
 
 
