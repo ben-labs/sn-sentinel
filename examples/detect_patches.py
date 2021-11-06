@@ -4,7 +4,7 @@
 import os
 import dotenv
 import re
-from blab.sentinel import Ftp
+from blab.sentinel import Ftp, Telegram
 
 
 dotenv.load_dotenv(os.path.join(os.path.dirname(__file__), '../.env'))
@@ -33,5 +33,21 @@ md5sum = re.search('.*md5sum-(.*)', checksum_file).group(1)
 print(current_patch)
 print(checksum_file)
 print(md5sum)
+
+'''
+Alert via telegram.
+
+To use the Telegram Class you will need a bot and
+it's token.
+
+Also whomever you are trying to send an alert to
+needs to be registered to the bot. ie: They need 
+to have communicated with the bot before.
+'''
+alerter = Telegram(os.environ.get('bot_token'))
+alerter.send_message(
+                     os.environ.get('ben_telegram_id'),
+                     "<b><u>New patch files found:</u></b>\n "
+                     f"<i>{current_patch} </i>\nYou got work to do!")
 
 ftp.disconnect()
