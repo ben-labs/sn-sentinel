@@ -1,5 +1,5 @@
-import os, json
 from ftplib import FTP, error_perm
+
 
 class Ftp:
     '''Handles FTP communications with ServiceNow FTP Server'''
@@ -7,16 +7,13 @@ class Ftp:
     def __init__(self) -> None:
         self.logged_in = False
 
-    
     @property
     def patches(self):
         return self._patches
 
-    
     @patches.setter
     def patches(self, props):
         self._patches = props
-
 
     def connect(self, uid, pwd):
         try:
@@ -26,7 +23,6 @@ class Ftp:
                 self.logged_in = True
         except error_perm:
             print("[ - ] Could not connect")
-    
 
     def disconnect(self):
         if not self.logged_in:
@@ -36,15 +32,13 @@ class Ftp:
             print("[ + ] Disconnected")
             return True
 
-
     def get_patches(self, filter=""):
         if not self.logged_in:
             print("[ - ] Not logged in")
             return False
-        
+
         self.patches = self.svr.nlst(filter)
         return True
-
 
     def list_patches(self, filter=""):
         if self.get_patches(filter):
