@@ -6,7 +6,7 @@ with open('README.md') as fp:
 setup(
     name="sn-sentinel", 
     install_requires=[],
-    version='0.1.0',
+    version='0.1.1',
     description=DESCRIPTION,
     author='Ben Quek',
     author_email='ben.quek@ben-labs.net',
