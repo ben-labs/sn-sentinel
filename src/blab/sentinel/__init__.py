@@ -70,7 +70,8 @@ class Telegram:
     def send_message(self, chat_id, text, parse_mode='html'):
         """
         Sends a telegram message
-        Can't send a message to a person if they do not already have an initial chat with you.
+        Can't send a message to a person if they do not
+        already have an initial chat with you.
         """
         payload = {
             "chat_id": chat_id,

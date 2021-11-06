@@ -41,7 +41,7 @@ To use the Telegram Class you will need a bot and
 it's token.
 
 Also whomever you are trying to send an alert to
-needs to be registered to the bot. ie: They need 
+needs to be registered to the bot. ie: They need
 to have communicated with the bot before.
 '''
 alerter = Telegram(os.environ.get('bot_token'))
