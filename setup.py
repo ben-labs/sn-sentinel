@@ -4,7 +4,7 @@ with open('README.md') as fp:
     DESCRIPTION = fp.read()
 
 setup(
-    name="sn-sentinel", 
+    name="sn-sentinel",
     install_requires=[],
     version='0.1.1',
     description=DESCRIPTION,
@@ -14,5 +14,5 @@ setup(
     maintainer_email='ben.quek@ben-labs.net',
     url='https://github.com/ben-labs/sn-sentinel',
     packages=['blab', 'blab.sentinel'],
-    package_dir={'':'src'}
+    package_dir={'': 'src'}
 )
